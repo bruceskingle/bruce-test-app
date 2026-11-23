@@ -1,0 +1,22 @@
+[application]
+name = "Test App"
+
+[bundle]
+# The .ico for Windows. The .png for macOS, where dx makes the app's .icns only from .png or .icns files, and leaves the
+# app without an icon if there are none.
+icon = ["icons/icon.ico", "icons/icon.png"]
+identifier = "org.skingle.bruce-test-app"
+publisher = "BruceSkingle"
+
+[bundle.windows]
+icon_path = "icons/icon.ico"
+# WebView2 is part of Windows 11 and recent Windows 10, so the installer runs Microsoft's small bootstrapper, silently,
+# which only downloads and installs it if it is missing, rather than embedding the whole offline installer.
+webview_install_mode = { DownloadBootstrapper = { silent = true } }
+
+[bundle.windows.nsis]
+# The setup.exe's own icon, which is not taken from bundle.icon.
+installer_icon = "icons/icon.ico"
+
+[web.app]
+title = "Test App"

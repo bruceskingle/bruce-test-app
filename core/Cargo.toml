@@ -1,0 +1,10 @@
+[package]
+name = "bruce-test-app-core"
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+description = "To test the vscode extension"
+# Made only for the app, so not published, see the method's README.
+publish = false
+
+[dependencies]
